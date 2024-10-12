@@ -1,0 +1,15 @@
+{
+  "originHash" : "c76170a63ed6ba05607824e344bcfc75df25cadf1cf8c0ebec8d18ac4b494daa",
+  "pins" : [
+    {
+      "identity" : "onewaykit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fomagran/OneWayKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "aeb5b171eace8bf342b1aa9dec021a39a8b78483"
+      }
+    }
+  ],
+  "version" : 3
+}

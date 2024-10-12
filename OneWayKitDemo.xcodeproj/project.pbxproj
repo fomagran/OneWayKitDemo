@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		04810FDB2CBA7C4A00376AF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04810FDA2CBA7C4A00376AF1 /* AppDelegate.swift */; };
 		04810FDD2CBA7C4A00376AF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04810FDC2CBA7C4A00376AF1 /* SceneDelegate.swift */; };
-		04810FDF2CBA7C4A00376AF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04810FDE2CBA7C4A00376AF1 /* ViewController.swift */; };
 		04810FE22CBA7C4A00376AF1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 04810FE12CBA7C4A00376AF1 /* Base */; };
 		04810FE42CBA7C4D00376AF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04810FE32CBA7C4D00376AF1 /* Assets.xcassets */; };
 		04810FE72CBA7C4D00376AF1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 04810FE62CBA7C4D00376AF1 /* Base */; };
 		04810FF22CBA7C4D00376AF1 /* OneWayKitDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04810FF12CBA7C4D00376AF1 /* OneWayKitDemoTests.swift */; };
 		04810FFC2CBA7C4D00376AF1 /* OneWayKitDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04810FFB2CBA7C4D00376AF1 /* OneWayKitDemoUITests.swift */; };
 		04810FFE2CBA7C4E00376AF1 /* OneWayKitDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04810FFD2CBA7C4E00376AF1 /* OneWayKitDemoUITestsLaunchTests.swift */; };
+		0481100C2CBA7CE700376AF1 /* ExampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481100B2CBA7CE700376AF1 /* ExampleTableViewController.swift */; };
+		0481100E2CBA7EDB00376AF1 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481100D2CBA7EDB00376AF1 /* ToDoViewController.swift */; };
+		048110102CBA7EFC00376AF1 /* ToDoFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481100F2CBA7EFC00376AF1 /* ToDoFeature.swift */; };
+		048110132CBA7F2400376AF1 /* OneWaykit in Frameworks */ = {isa = PBXBuildFile; productRef = 048110122CBA7F2400376AF1 /* OneWaykit */; };
+		048110172CBA7F4C00376AF1 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048110162CBA7F4C00376AF1 /* AddToDoViewController.swift */; };
+		048110192CBA7F8400376AF1 /* AddToDoFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048110182CBA7F8400376AF1 /* AddToDoFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +44,6 @@
 		04810FD72CBA7C4A00376AF1 /* OneWayKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneWayKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04810FDA2CBA7C4A00376AF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04810FDC2CBA7C4A00376AF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04810FDE2CBA7C4A00376AF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		04810FE12CBA7C4A00376AF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04810FE32CBA7C4D00376AF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04810FE62CBA7C4D00376AF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +53,11 @@
 		04810FF72CBA7C4D00376AF1 /* OneWayKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneWayKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04810FFB2CBA7C4D00376AF1 /* OneWayKitDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneWayKitDemoUITests.swift; sourceTree = "<group>"; };
 		04810FFD2CBA7C4E00376AF1 /* OneWayKitDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneWayKitDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0481100B2CBA7CE700376AF1 /* ExampleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTableViewController.swift; sourceTree = "<group>"; };
+		0481100D2CBA7EDB00376AF1 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		0481100F2CBA7EFC00376AF1 /* ToDoFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoFeature.swift; sourceTree = "<group>"; };
+		048110162CBA7F4C00376AF1 /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
+		048110182CBA7F8400376AF1 /* AddToDoFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048110132CBA7F2400376AF1 /* OneWaykit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,9 +109,10 @@
 		04810FD92CBA7C4A00376AF1 /* OneWayKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0481100A2CBA7C5800376AF1 /* ToDo */,
 				04810FDA2CBA7C4A00376AF1 /* AppDelegate.swift */,
 				04810FDC2CBA7C4A00376AF1 /* SceneDelegate.swift */,
-				04810FDE2CBA7C4A00376AF1 /* ViewController.swift */,
+				0481100B2CBA7CE700376AF1 /* ExampleTableViewController.swift */,
 				04810FE02CBA7C4A00376AF1 /* Main.storyboard */,
 				04810FE32CBA7C4D00376AF1 /* Assets.xcassets */,
 				04810FE52CBA7C4D00376AF1 /* LaunchScreen.storyboard */,
@@ -127,6 +138,17 @@
 			path = OneWayKitDemoUITests;
 			sourceTree = "<group>";
 		};
+		0481100A2CBA7C5800376AF1 /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				0481100D2CBA7EDB00376AF1 /* ToDoViewController.swift */,
+				0481100F2CBA7EFC00376AF1 /* ToDoFeature.swift */,
+				048110162CBA7F4C00376AF1 /* AddToDoViewController.swift */,
+				048110182CBA7F8400376AF1 /* AddToDoFeature.swift */,
+			);
+			path = ToDo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +165,9 @@
 			dependencies = (
 			);
 			name = OneWayKitDemo;
+			packageProductDependencies = (
+				048110122CBA7F2400376AF1 /* OneWaykit */,
+			);
 			productName = OneWayKitDemo;
 			productReference = 04810FD72CBA7C4A00376AF1 /* OneWayKitDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +240,9 @@
 				Base,
 			);
 			mainGroup = 04810FCE2CBA7C4A00376AF1;
+			packageReferences = (
+				048110112CBA7F2400376AF1 /* XCRemoteSwiftPackageReference "OneWayKit" */,
+			);
 			productRefGroup = 04810FD82CBA7C4A00376AF1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,9 +286,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04810FDF2CBA7C4A00376AF1 /* ViewController.swift in Sources */,
+				0481100E2CBA7EDB00376AF1 /* ToDoViewController.swift in Sources */,
+				048110192CBA7F8400376AF1 /* AddToDoFeature.swift in Sources */,
+				0481100C2CBA7CE700376AF1 /* ExampleTableViewController.swift in Sources */,
 				04810FDB2CBA7C4A00376AF1 /* AppDelegate.swift in Sources */,
+				048110172CBA7F4C00376AF1 /* AddToDoViewController.swift in Sources */,
 				04810FDD2CBA7C4A00376AF1 /* SceneDelegate.swift in Sources */,
+				048110102CBA7EFC00376AF1 /* ToDoFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +482,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,6 +511,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -607,6 +641,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		048110112CBA7F2400376AF1 /* XCRemoteSwiftPackageReference "OneWayKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fomagran/OneWayKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		048110122CBA7F2400376AF1 /* OneWaykit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 048110112CBA7F2400376AF1 /* XCRemoteSwiftPackageReference "OneWayKit" */;
+			productName = OneWaykit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04810FCF2CBA7C4A00376AF1 /* Project object */;
 }

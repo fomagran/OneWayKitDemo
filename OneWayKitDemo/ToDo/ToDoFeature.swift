@@ -19,8 +19,6 @@ struct ToDoFeature: Featurable {
         case add(String)
         case delete(Int)
         case addToDo(AddToDoFeature.Action)
-        case reserveToDo(Int)
-        case addToDoPerSecond(TimeInterval)
     }
     
     static var updater: Updater = { state, action in
@@ -43,8 +41,6 @@ struct ToDoFeature: Featurable {
                 todos.append(newToDo)
                 newState.todos = todos
             }
-            
-        default: break
         }
         
         return newState

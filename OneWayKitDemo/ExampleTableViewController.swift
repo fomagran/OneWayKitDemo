@@ -11,6 +11,7 @@ class ExampleTableViewController: UITableViewController {
     
     enum Example: String, CaseIterable {
         case todo
+        case timer
     }
     
     private var examples: [Example] = Example.allCases
@@ -21,7 +22,7 @@ class ExampleTableViewController: UITableViewController {
     }
     
     private func setupTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "TodoCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ExampleCell")
     }
     
     // MARK: - Table view data source and delegate
@@ -35,7 +36,7 @@ class ExampleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ExampleCell", for: indexPath)
         cell.textLabel?.text = examples[indexPath.row].rawValue
         return cell
     }
@@ -46,6 +47,8 @@ class ExampleTableViewController: UITableViewController {
         switch example {
         case .todo:
             self.navigationController?.pushViewController(ToDoViewController(), animated: true)
+        case .timer:
+            self.navigationController?.pushViewController(TimerViewController(), animated: true)
         }
     }
     

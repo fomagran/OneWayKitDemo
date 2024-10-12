@@ -1,5 +1,5 @@
 //
-//  ToDoViewController.swift
+//  TimerViewController.swift
 //  OneWayKitDemo
 //
 //  Created by Fomagran on 10/12/24.
@@ -9,10 +9,11 @@ import UIKit
 import OneWaykit
 import Combine
 
-final class ToDoViewController: UIViewController {
+final class TimerViewController: UIViewController {
     
-    private let oneway = OneWay<ToDoFeature>(initialState: .init(todos: []))
+    private let oneway = OneWay<TimerFeature>(initialState: .init())
     private var cancellables = Set<AnyCancellable>()
+    private var isCancelled: Bool = false
     
     private let tableView = UITableView()
     
@@ -26,8 +27,17 @@ final class ToDoViewController: UIViewController {
     private func setupOneWay() {
         // Binding State
         oneway.statePublisher
-            .sink { [weak self] state in
+            .map { $0.messages }
+            .sink { [weak self] _ in
                 self?.tableView.reloadData()
+            }
+            .store(in: &cancellables)
+        
+        oneway.statePublisher
+            .map { $0.isCancelled }
+            .removeDuplicates()
+            .sink { [weak self] isCancelled in
+                self?.navigationItem.rightBarButtonItem?.title = isCancelled ? "Resume" : "Cancel"
             }
             .store(in: &cancellables)
     }
@@ -45,47 +55,29 @@ final class ToDoViewController: UIViewController {
         ])
         
         tableView.dataSource = self
-        tableView.delegate = self
-        
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "TodoCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "TimerCell")
     }
     
     private func setupNavigationBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Resume", style: .plain, target: self, action: #selector(tappedRightItems))
     }
     
-    @objc private func addButtonTapped() {
-        let addToDoOneWay = OneWay<AddToDoFeature>(initialState: .init())
-        
-        // Transform Child Action Example
-        oneway.transform(id: "AddToDoOneWay", action: addToDoOneWay.action) { [weak self] in
-            self?.oneway.send(.addToDo($0))
-        }
-        let addToDoVC = AddToDoViewController(oneway: addToDoOneWay)
-        present(addToDoVC, animated: true, completion: nil)
+    @objc private func tappedRightItems() {
+        oneway.send(.tapRightButton)
     }
 }
 
 
 // MARK: - UITableViewDataSource
 
-extension ToDoViewController: UITableViewDataSource {
+extension TimerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
-        cell.textLabel?.text = oneway.state.todos[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TimerCell", for: indexPath)
+        cell.textLabel?.text = oneway.state.messages[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        oneway.state.todos.count
-    }
-}
-
-
-// MARK: - UITableViewDelegate
-
-extension ToDoViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        oneway.send(.delete(indexPath.row))
+        oneway.state.messages.count
     }
 }

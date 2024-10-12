@@ -18,9 +18,12 @@
 		0481100C2CBA7CE700376AF1 /* ExampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481100B2CBA7CE700376AF1 /* ExampleTableViewController.swift */; };
 		0481100E2CBA7EDB00376AF1 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481100D2CBA7EDB00376AF1 /* ToDoViewController.swift */; };
 		048110102CBA7EFC00376AF1 /* ToDoFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481100F2CBA7EFC00376AF1 /* ToDoFeature.swift */; };
-		048110132CBA7F2400376AF1 /* OneWaykit in Frameworks */ = {isa = PBXBuildFile; productRef = 048110122CBA7F2400376AF1 /* OneWaykit */; };
 		048110172CBA7F4C00376AF1 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048110162CBA7F4C00376AF1 /* AddToDoViewController.swift */; };
 		048110192CBA7F8400376AF1 /* AddToDoFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048110182CBA7F8400376AF1 /* AddToDoFeature.swift */; };
+		0481101F2CBA825300376AF1 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481101E2CBA825300376AF1 /* TimerViewController.swift */; };
+		048110212CBA826700376AF1 /* TimerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048110202CBA826700376AF1 /* TimerFeature.swift */; };
+		048110232CBA827000376AF1 /* TimerAsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048110222CBA827000376AF1 /* TimerAsyncAction.swift */; };
+		048110812CBAD10500376AF1 /* OneWaykit in Frameworks */ = {isa = PBXBuildFile; productRef = 048110802CBAD10500376AF1 /* OneWaykit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		0481100F2CBA7EFC00376AF1 /* ToDoFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoFeature.swift; sourceTree = "<group>"; };
 		048110162CBA7F4C00376AF1 /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
 		048110182CBA7F8400376AF1 /* AddToDoFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoFeature.swift; sourceTree = "<group>"; };
+		0481101E2CBA825300376AF1 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		048110202CBA826700376AF1 /* TimerFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFeature.swift; sourceTree = "<group>"; };
+		048110222CBA827000376AF1 /* TimerAsyncAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAsyncAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048110132CBA7F2400376AF1 /* OneWaykit in Frameworks */,
+				048110812CBAD10500376AF1 /* OneWaykit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +115,7 @@
 		04810FD92CBA7C4A00376AF1 /* OneWayKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0481101D2CBA824900376AF1 /* Timer */,
 				0481100A2CBA7C5800376AF1 /* ToDo */,
 				04810FDA2CBA7C4A00376AF1 /* AppDelegate.swift */,
 				04810FDC2CBA7C4A00376AF1 /* SceneDelegate.swift */,
@@ -149,6 +156,16 @@
 			path = ToDo;
 			sourceTree = "<group>";
 		};
+		0481101D2CBA824900376AF1 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				0481101E2CBA825300376AF1 /* TimerViewController.swift */,
+				048110202CBA826700376AF1 /* TimerFeature.swift */,
+				048110222CBA827000376AF1 /* TimerAsyncAction.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,7 +183,7 @@
 			);
 			name = OneWayKitDemo;
 			packageProductDependencies = (
-				048110122CBA7F2400376AF1 /* OneWaykit */,
+				048110802CBAD10500376AF1 /* OneWaykit */,
 			);
 			productName = OneWayKitDemo;
 			productReference = 04810FD72CBA7C4A00376AF1 /* OneWayKitDemo.app */;
@@ -241,7 +258,7 @@
 			);
 			mainGroup = 04810FCE2CBA7C4A00376AF1;
 			packageReferences = (
-				048110112CBA7F2400376AF1 /* XCRemoteSwiftPackageReference "OneWayKit" */,
+				0481107F2CBAD10500376AF1 /* XCRemoteSwiftPackageReference "OneWayKit" */,
 			);
 			productRefGroup = 04810FD82CBA7C4A00376AF1 /* Products */;
 			projectDirPath = "";
@@ -286,10 +303,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048110212CBA826700376AF1 /* TimerFeature.swift in Sources */,
 				0481100E2CBA7EDB00376AF1 /* ToDoViewController.swift in Sources */,
 				048110192CBA7F8400376AF1 /* AddToDoFeature.swift in Sources */,
 				0481100C2CBA7CE700376AF1 /* ExampleTableViewController.swift in Sources */,
+				048110232CBA827000376AF1 /* TimerAsyncAction.swift in Sources */,
 				04810FDB2CBA7C4A00376AF1 /* AppDelegate.swift in Sources */,
+				0481101F2CBA825300376AF1 /* TimerViewController.swift in Sources */,
 				048110172CBA7F4C00376AF1 /* AddToDoViewController.swift in Sources */,
 				04810FDD2CBA7C4A00376AF1 /* SceneDelegate.swift in Sources */,
 				048110102CBA7EFC00376AF1 /* ToDoFeature.swift in Sources */,
@@ -643,20 +663,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		048110112CBA7F2400376AF1 /* XCRemoteSwiftPackageReference "OneWayKit" */ = {
+		0481107F2CBAD10500376AF1 /* XCRemoteSwiftPackageReference "OneWayKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/fomagran/OneWayKit";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.5;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		048110122CBA7F2400376AF1 /* OneWaykit */ = {
+		048110802CBAD10500376AF1 /* OneWaykit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 048110112CBA7F2400376AF1 /* XCRemoteSwiftPackageReference "OneWayKit" */;
+			package = 0481107F2CBAD10500376AF1 /* XCRemoteSwiftPackageReference "OneWayKit" */;
 			productName = OneWaykit;
 		};
 /* End XCSwiftPackageProductDependency section */

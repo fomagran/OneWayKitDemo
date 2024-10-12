@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/fomagran/OneWayKit",
       "state" : {
-        "branch" : "main",
-        "revision" : "aeb5b171eace8bf342b1aa9dec021a39a8b78483"
+        "revision" : "dd98ec052f67d7e7b887b83d22ae8d1aca833a6c",
+        "version" : "1.1.5"
       }
     }
   ],

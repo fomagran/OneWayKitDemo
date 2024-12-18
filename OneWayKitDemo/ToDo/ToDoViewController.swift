@@ -12,6 +12,7 @@ import Combine
 final class ToDoViewController: UIViewController {
     
     private let oneway = OneWay<ToDoFeature>(initialState: .init(todos: []))
+    private let addToDoOneWay = OneWay<AddToDoFeature>(initialState: .init())
     private var cancellables = Set<AnyCancellable>()
     
     private let tableView = UITableView()
@@ -34,6 +35,13 @@ extension ToDoViewController {
         oneway.statePublisher
             .sink { [weak self] state in
                 self?.tableView.reloadData()
+            }
+            .store(in: &cancellables)
+        
+        addToDoOneWay.action
+            .compactMap { $0 }
+            .sink { [weak self] in
+                self?.oneway.send(.addToDo($0))
             }
             .store(in: &cancellables)
     }
@@ -68,15 +76,6 @@ extension ToDoViewController {
 extension ToDoViewController {
     
     @objc private func addButtonTapped() {
-        let addToDoOneWay = OneWay<AddToDoFeature>(initialState: .init())
-        
-        addToDoOneWay.action
-            .compactMap { $0 }
-            .sink { [weak self] in
-                self?.oneway.send(.addToDo($0))
-            }
-            .store(in: &cancellables)
-
         let addToDoVC = AddToDoViewController(oneway: addToDoOneWay)
         present(addToDoVC, animated: true, completion: nil)
     }
@@ -87,6 +86,7 @@ extension ToDoViewController {
 // MARK: - UITableViewDataSource
 
 extension ToDoViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
         cell.textLabel?.text = oneway.state.todos[indexPath.row]
@@ -96,13 +96,18 @@ extension ToDoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         oneway.state.todos.count
     }
+    
 }
 
 
 // MARK: - UITableViewDelegate
 
 extension ToDoViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        oneway.send(.delete(indexPath.row))
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            oneway.send(.delete(indexPath.row))
+        }
     }
+    
 }

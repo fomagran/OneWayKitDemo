@@ -8,14 +8,13 @@
 import OneWaykit
 import Foundation
 
-struct ToDoFeature: Featurable {
-    static var id: String = "TodoFeature"
+struct ToDoFeature: ViewFeature {
     
-    struct State: FeatureState {
+    struct State: ViewState {
         var todos: [String]
     }
     
-    enum Action: FeatureAction {
+    enum Action: ViewAction {
         case add(String)
         case delete(Int)
         case addToDo(AddToDoFeature.Action)
@@ -46,5 +45,5 @@ struct ToDoFeature: Featurable {
         return newState
     }
     
-    static var asyncActions: [AsyncAction]?
+    static var middlewares: [Middleware]?
 }

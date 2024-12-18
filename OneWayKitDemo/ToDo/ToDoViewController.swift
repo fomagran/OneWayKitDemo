@@ -23,8 +23,14 @@ final class ToDoViewController: UIViewController {
         setupNavigationBar()
     }
     
+}
+
+
+// MARK: - Set up
+
+extension ToDoViewController {
+    
     private func setupOneWay() {
-        // Binding State
         oneway.statePublisher
             .sink { [weak self] state in
                 self?.tableView.reloadData()
@@ -54,16 +60,27 @@ final class ToDoViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
     }
     
+}
+
+
+// MARK: - Objc Actions
+
+extension ToDoViewController {
+    
     @objc private func addButtonTapped() {
         let addToDoOneWay = OneWay<AddToDoFeature>(initialState: .init())
         
-        // Transform Child Action Example
-        oneway.transform(id: "AddToDoOneWay", action: addToDoOneWay.action) { [weak self] in
-            self?.oneway.send(.addToDo($0))
-        }
+        addToDoOneWay.action
+            .compactMap { $0 }
+            .sink { [weak self] in
+                self?.oneway.send(.addToDo($0))
+            }
+            .store(in: &cancellables)
+
         let addToDoVC = AddToDoViewController(oneway: addToDoOneWay)
         present(addToDoVC, animated: true, completion: nil)
     }
+    
 }
 
 

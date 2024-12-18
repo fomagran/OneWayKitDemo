@@ -38,10 +38,17 @@ class AddToDoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        setupViews()
     }
+
+}
+
+
+// MARK: - Set up
+
+extension AddToDoViewController {
     
-    private func setupUI() {
+    private func setupViews() {
         view.backgroundColor = .white
         view.addSubview(textField)
         view.addSubview(saveButton)
@@ -57,10 +64,17 @@ class AddToDoViewController: UIViewController {
         
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     }
+}
+
+
+// MARK: - Objc Actions
+
+extension AddToDoViewController {
     
     @objc private func saveButtonTapped() {
         guard let text = textField.text, !text.isEmpty else { return }
         oneway.send(.add(text))
         self.dismiss(animated: true)
     }
+    
 }

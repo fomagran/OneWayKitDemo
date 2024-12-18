@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,8 +22,13 @@
 		048110192CBA7F8400376AF1 /* AddToDoFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048110182CBA7F8400376AF1 /* AddToDoFeature.swift */; };
 		0481101F2CBA825300376AF1 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0481101E2CBA825300376AF1 /* TimerViewController.swift */; };
 		048110212CBA826700376AF1 /* TimerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048110202CBA826700376AF1 /* TimerFeature.swift */; };
-		048110232CBA827000376AF1 /* TimerAsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048110222CBA827000376AF1 /* TimerAsyncAction.swift */; };
-		048110812CBAD10500376AF1 /* OneWaykit in Frameworks */ = {isa = PBXBuildFile; productRef = 048110802CBAD10500376AF1 /* OneWaykit */; };
+		048110232CBA827000376AF1 /* TimerMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048110222CBA827000376AF1 /* TimerMiddleware.swift */; };
+		DEE9EE5B2D104B6C005C3166 /* OneWaykit in Frameworks */ = {isa = PBXBuildFile; productRef = DEE9EE5A2D104B6C005C3166 /* OneWaykit */; };
+		DEE9EE5E2D104BC8005C3166 /* OneWaykit in Frameworks */ = {isa = PBXBuildFile; productRef = DEE9EE5D2D104BC8005C3166 /* OneWaykit */; };
+		DEE9EE612D105201005C3166 /* TracerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9EE602D105201005C3166 /* TracerViewController.swift */; };
+		DEE9EE632D105248005C3166 /* TracerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9EE622D105248005C3166 /* TracerFeature.swift */; };
+		DEE9EE662D11B8A9005C3166 /* GlobalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9EE652D11B8A9005C3166 /* GlobalViewController.swift */; };
+		DEE9EE682D11B8D4005C3166 /* GlobalFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE9EE672D11B8D4005C3166 /* GlobalFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +68,11 @@
 		048110182CBA7F8400376AF1 /* AddToDoFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoFeature.swift; sourceTree = "<group>"; };
 		0481101E2CBA825300376AF1 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		048110202CBA826700376AF1 /* TimerFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFeature.swift; sourceTree = "<group>"; };
-		048110222CBA827000376AF1 /* TimerAsyncAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAsyncAction.swift; sourceTree = "<group>"; };
+		048110222CBA827000376AF1 /* TimerMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerMiddleware.swift; sourceTree = "<group>"; };
+		DEE9EE602D105201005C3166 /* TracerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracerViewController.swift; sourceTree = "<group>"; };
+		DEE9EE622D105248005C3166 /* TracerFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracerFeature.swift; sourceTree = "<group>"; };
+		DEE9EE652D11B8A9005C3166 /* GlobalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalViewController.swift; sourceTree = "<group>"; };
+		DEE9EE672D11B8D4005C3166 /* GlobalFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				048110812CBAD10500376AF1 /* OneWaykit in Frameworks */,
+				DEE9EE5E2D104BC8005C3166 /* OneWaykit in Frameworks */,
+				DEE9EE5B2D104B6C005C3166 /* OneWaykit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +125,8 @@
 		04810FD92CBA7C4A00376AF1 /* OneWayKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DEE9EE642D11B89F005C3166 /* Global */,
+				DEE9EE5F2D1051F6005C3166 /* Tracer */,
 				0481101D2CBA824900376AF1 /* Timer */,
 				0481100A2CBA7C5800376AF1 /* ToDo */,
 				04810FDA2CBA7C4A00376AF1 /* AppDelegate.swift */,
@@ -161,9 +173,27 @@
 			children = (
 				0481101E2CBA825300376AF1 /* TimerViewController.swift */,
 				048110202CBA826700376AF1 /* TimerFeature.swift */,
-				048110222CBA827000376AF1 /* TimerAsyncAction.swift */,
+				048110222CBA827000376AF1 /* TimerMiddleware.swift */,
 			);
 			path = Timer;
+			sourceTree = "<group>";
+		};
+		DEE9EE5F2D1051F6005C3166 /* Tracer */ = {
+			isa = PBXGroup;
+			children = (
+				DEE9EE602D105201005C3166 /* TracerViewController.swift */,
+				DEE9EE622D105248005C3166 /* TracerFeature.swift */,
+			);
+			path = Tracer;
+			sourceTree = "<group>";
+		};
+		DEE9EE642D11B89F005C3166 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				DEE9EE652D11B8A9005C3166 /* GlobalViewController.swift */,
+				DEE9EE672D11B8D4005C3166 /* GlobalFeature.swift */,
+			);
+			path = Global;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,7 +213,8 @@
 			);
 			name = OneWayKitDemo;
 			packageProductDependencies = (
-				048110802CBAD10500376AF1 /* OneWaykit */,
+				DEE9EE5A2D104B6C005C3166 /* OneWaykit */,
+				DEE9EE5D2D104BC8005C3166 /* OneWaykit */,
 			);
 			productName = OneWayKitDemo;
 			productReference = 04810FD72CBA7C4A00376AF1 /* OneWayKitDemo.app */;
@@ -258,7 +289,7 @@
 			);
 			mainGroup = 04810FCE2CBA7C4A00376AF1;
 			packageReferences = (
-				0481107F2CBAD10500376AF1 /* XCRemoteSwiftPackageReference "OneWayKit" */,
+				DEE9EE5C2D104BC8005C3166 /* XCLocalSwiftPackageReference "../OneWayKit" */,
 			);
 			productRefGroup = 04810FD82CBA7C4A00376AF1 /* Products */;
 			projectDirPath = "";
@@ -307,11 +338,15 @@
 				0481100E2CBA7EDB00376AF1 /* ToDoViewController.swift in Sources */,
 				048110192CBA7F8400376AF1 /* AddToDoFeature.swift in Sources */,
 				0481100C2CBA7CE700376AF1 /* ExampleTableViewController.swift in Sources */,
-				048110232CBA827000376AF1 /* TimerAsyncAction.swift in Sources */,
+				048110232CBA827000376AF1 /* TimerMiddleware.swift in Sources */,
 				04810FDB2CBA7C4A00376AF1 /* AppDelegate.swift in Sources */,
 				0481101F2CBA825300376AF1 /* TimerViewController.swift in Sources */,
+				DEE9EE682D11B8D4005C3166 /* GlobalFeature.swift in Sources */,
 				048110172CBA7F4C00376AF1 /* AddToDoViewController.swift in Sources */,
+				DEE9EE612D105201005C3166 /* TracerViewController.swift in Sources */,
+				DEE9EE662D11B8A9005C3166 /* GlobalViewController.swift in Sources */,
 				04810FDD2CBA7C4A00376AF1 /* SceneDelegate.swift in Sources */,
+				DEE9EE632D105248005C3166 /* TracerFeature.swift in Sources */,
 				048110102CBA7EFC00376AF1 /* ToDoFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -662,21 +697,20 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		0481107F2CBAD10500376AF1 /* XCRemoteSwiftPackageReference "OneWayKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/fomagran/OneWayKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.5;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		DEE9EE5C2D104BC8005C3166 /* XCLocalSwiftPackageReference "../OneWayKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../OneWayKit;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		048110802CBAD10500376AF1 /* OneWaykit */ = {
+		DEE9EE5A2D104B6C005C3166 /* OneWaykit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0481107F2CBAD10500376AF1 /* XCRemoteSwiftPackageReference "OneWayKit" */;
+			productName = OneWaykit;
+		};
+		DEE9EE5D2D104BC8005C3166 /* OneWaykit */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = OneWaykit;
 		};
 /* End XCSwiftPackageProductDependency section */

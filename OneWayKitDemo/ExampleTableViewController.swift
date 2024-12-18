@@ -12,6 +12,8 @@ class ExampleTableViewController: UITableViewController {
     enum Example: String, CaseIterable {
         case todo
         case timer
+        case tracer
+        case global
     }
     
     private var examples: [Example] = Example.allCases
@@ -49,6 +51,10 @@ class ExampleTableViewController: UITableViewController {
             self.navigationController?.pushViewController(ToDoViewController(), animated: true)
         case .timer:
             self.navigationController?.pushViewController(TimerViewController(), animated: true)
+        case .tracer:
+            self.navigationController?.pushViewController(TracerViewController(), animated: true)
+        case .global:
+            self.navigationController?.pushViewController(GlobalViewController(), animated: true)
         }
     }
     

@@ -91,6 +91,7 @@ final class BottomSheetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupOneWay()
     }
     
 }

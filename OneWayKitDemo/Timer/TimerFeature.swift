@@ -8,33 +8,37 @@
 import OneWaykit
 import Foundation
 
-struct TimerFeature: Featurable {
-    static var id: String = "TimerFeature"
+struct TimerFeature: ViewFeature {
     
-    struct State: FeatureState {
-        var messages: [String] = []
-        var isCancelled: Bool = true
+    struct State: ViewState {
+        var currentTime: Float = 0
+        var isStarted: Bool = false
+        var interval: TimeInterval = 0.1
     }
     
-    enum Action: FeatureAction {
-        case add(String)
-        case addMessagePerSecond(TimeInterval)
+    enum Action: ViewAction {
+        case start
+        case add
         case tapRightButton
-        case setCancel(Bool)
+        case toggleStart
     }
     
     static var updater: Updater = { state, action in
         var newState = state
         switch action {
-        case .add(let message):
-            newState.messages.append(message)
-        case .setCancel(let isCancelled):
-            newState.isCancelled = isCancelled
+            
+        case .add:
+            newState.currentTime += Float(state.interval)
+            
+        case .toggleStart:
+            newState.isStarted.toggle()
+            
         default: break
         }
         
         return newState
     }
     
-    static var asyncActions: [AsyncAction]? = [TimerAsyncAction()]
+    static var middlewares: [Middleware]? = [TimerMiddleware()]
+    
 }
